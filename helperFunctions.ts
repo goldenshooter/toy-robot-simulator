@@ -9,7 +9,7 @@ export function isValidPosition(x: number, y: number): boolean {
 export function parsePlaceCommand(command: string): Position | null {
   const line = command.trim().toUpperCase();
 
-  if (!line.startsWith('PLACE')) {
+  if (line.split(' ')[0] !== 'PLACE') {
     return null;
   }
 

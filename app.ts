@@ -20,19 +20,28 @@ const handleCommand = (command: string) => {
     } else {
       console.log('Invalid PLACE command, example: PLACE 0,0,NORTH');
     }
-  } else if (line === 'MOVE') {
-    robot.move();
-  } else if (line === 'LEFT') {
-    robot.left();
-  } else if (line === 'RIGHT') {
-    robot.right();
-  } else if (line === 'REPORT') {
-    const latestPosition = robot.report();
-    if (latestPosition) {
-      console.log(formatReport(latestPosition));
+    return;
+  }
+
+  switch (line) {
+    case 'MOVE':
+      robot.move();
+      break;
+    case 'LEFT':
+      robot.left();
+      break;
+    case 'RIGHT':
+      robot.right();
+      break;
+    case 'REPORT': {
+      const latestPosition = robot.report();
+      if (latestPosition) {
+        console.log(formatReport(latestPosition));
+      }
+      break;
     }
-  } else {
-    console.log('Invalid command, please try again.');
+    default:
+      console.log('Invalid command, please try again.');
   }
 };
 
