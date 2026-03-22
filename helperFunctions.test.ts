@@ -6,7 +6,7 @@ import {
   parsePlaceCommand,
   rotateLeft,
   rotateRight,
-} from './helperFunctions';
+} from './helperFunctions.ts';
 
 describe('helper functions', () => {
   test('parsePlaceCommand parses valid PLACE command', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import ToyRobot from './toyRobot';
+import ToyRobot from './toyRobot.ts';
 
 describe('ToyRobot', () => {
   test('returns null from report before being placed', () => {
